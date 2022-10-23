@@ -25,7 +25,7 @@ import Card from "../components/Card.astro";
     </ul>
     <br />
     <div
-      class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4 hover:bg-fuchsia-300"
+      class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4 hover:bg-gradient-to-tr from-purple-400 to-pink-300 transition-all ease-linear duration-500"
     >
       <div class="shrink-0">
         <svg
@@ -70,11 +70,47 @@ import Card from "../components/Card.astro";
     <div class="text-fuchsia-500 text-center">
       This is a text with a fuchsia color
     </div>
-    <p className=" ">Hi mum!</p>
+    <p class="text-center text-green-500 font-bold">Hi mum!</p>
+    <div
+      class="fixed bottom-0 right-0 w-screen h-18 m-0 p-1 gap-10 flex flex-row bg-gray-900 text-white"
+    >
+      <div class="group">
+        <i class="bottombar-icon">A</i>
+        <span class="bottombar-tooltip group-hover:scale-100">tooltip 💡</span>
+      </div>
+
+      <div class="group">
+        <i class="bottombar-icon">B</i>
+        <span class="bottombar-tooltip group-hover:scale-100">tooltip 💡</span>
+      </div>
+
+      <div class="group">
+        <i class="bottombar-icon">C</i>
+        <span class="bottombar-tooltip group-hover:scale-100">tooltip 💡</span>
+      </div>
+    </div>
   </main>
 </Layout>
 
 <style>
+  .bottombar-icon {
+    @apply relative flex items-center 
+	justify-center w-12 h-12 mt-2 mb-2 
+	mx-auto shadow-lg
+	bg-gray-800 text-primary-400
+	hover:bg-green-600 hover:text-white
+	rounded-3xl hover:shadow-2xl hover:rounded-xl
+	transition-all duration-200 ease-linear;
+  }
+
+  .bottombar-tooltip {
+    @apply absolute h-auto p-2 m-2 min-w-max bottom-20
+	rounded-md shadow-md
+	text-white bg-gray-900 
+	text-xs font-bold
+	transition-all duration-100 scale-0 origin-left;
+  }
+
   main {
     margin: auto;
     padding: 1.5rem;
